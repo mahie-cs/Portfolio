@@ -10,7 +10,7 @@ export const siteConfig = {
   name: 'MD. Montasir Rahman Mahie',
   // The hero shows these two lines in very large type, so keep them short.
   firstName: 'Montasir',
-  lastName: 'Mahie',
+  lastName: 'Rahman',
   role: 'Junior software developer',
   tagline: 'First-year CSE student building web apps and games.',
   description:
