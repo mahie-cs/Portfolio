@@ -1,10 +1,14 @@
-export type NavItem = { title: string; href: string };
+export type NavItem = { title: string; href: string; badge?: string; external?: boolean };
 
 /** Top-level navigation, used by the header, mobile menu and command menu. */
 export const mainNav: NavItem[] = [
-  { title: 'Projects', href: '/projects' },
+  { title: 'Home', href: '/' },
   { title: 'About', href: '/about' },
+  { title: 'Projects', href: '/projects' },
   { title: 'Skills', href: '/skills-tools' },
+  { title: 'Experience', href: '/career' },
+  { title: 'Education', href: '/education' },
+  { title: 'Stats', href: '/stats' },
   { title: 'Contact', href: '/contact' },
 ];
 
