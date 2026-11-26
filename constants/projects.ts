@@ -15,6 +15,37 @@ export type Project = {
 };
 
 const rawProjects: Project[] = [
+    {
+    title: 'Lucid',
+    slug: 'lucid',
+    tagline: 'A small, native, ad-free YouTube Music client for Android.',
+    overview:
+      'Lucid is a lightweight, native YouTube Music client for Android built with Kotlin and Jetpack Compose. It communicates directly with YouTube’s internal InnerTube API and plays through Media3 without a backend server or audio ads, focusing on a clean player, essential themes, and core listening features.',
+    year: '2026',
+    number: 4,
+    featured: true,
+    features: [
+      'Ad-free audio streaming directly from YouTube’s internal API',
+      'Offline downloads for songs, albums, playlists, and automatic library syncing',
+      'Google sign-in with multi-account switching and full YouTube Music library sync',
+      'Synced third-party lyrics with source ordering, per-song timing nudge, and local caching',
+      'Media3 playback with loudness normalization, ten-band equalizer, crossfade, and sleep timer',
+      'Android Auto, home-screen widget, lock-screen controls, and Spotify playlist import',
+    ],
+    techStack: ['Kotlin', 'Jetpack Compose', 'Android SDK', 'Media3 ExoPlayer', 'Room', 'QuickJS'],
+    challenges: [
+      'Resolving YouTube InnerTube streams client-side by minting PoTokens via a hidden BotGuard WebView and solving signature ciphers locally in QuickJS without a backend.',
+      'Stripping down bloated UI layers, preset themes, and blurred headers from the upstream fork to maintain smooth scrolling and a lightweight footprint.',
+    ],
+    learnings: [
+      'Managing foreground media playback services, disk caching, and system media sessions with AndroidX Media3.',
+      'Integrating local Room persistence, multi-provider synced lyrics resolution, and client-side JavaScript execution in a modern Jetpack Compose architecture.',
+    ],
+    links: {
+      live: 'https://listen-lucid.vercel.app',
+      github: 'https://github.com/mahie-cs/Lucid',
+    },
+  },
   {
     title: 'Momentum',
     slug: 'momentum',
@@ -22,7 +53,7 @@ const rawProjects: Project[] = [
     overview:
       'Momentum is a clean, minimalist event tracker designed for the CSE department to easily manage, organize, and view upcoming department events, deadlines, and schedules.',
     year: '2026',
-    number: 3,
+    number: 1,
     featured: true,
     features: [
       'Clean and minimalist event tracking dashboard',
@@ -80,7 +111,7 @@ const rawProjects: Project[] = [
     overview:
       "Lingua Aid provides travelers and non-native speakers with instant access to critical emergency phone numbers and essential everyday phrases, complete with phonetic pronunciation guides and audio clips.",
     year: '2026',
-    number: 1,
+    number: 3,
     featured: true,
     features: [
       'Quick emergency numbers categorized by region and utility',
