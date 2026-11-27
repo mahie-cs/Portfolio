@@ -12,14 +12,14 @@ const items = [
 
 export function SocialLinks() {
   return (
-    <ul className="flex flex-wrap gap-2">
+    <ul className="flex flex-wrap gap-3">
       {items.filter((i) => i.href).map(({ label, href, Icon }) => (
         <li key={label}>
           <Link
             href={href}
             target={href.startsWith('http') ? '_blank' : undefined}
             rel="noreferrer"
-            className="flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition-colors hover:border-primary/50 hover:bg-accent"
+            className="flex items-center gap-2 border-2 border-foreground bg-background px-4 py-2 font-sans text-sm font-bold text-foreground shadow-hard-sm hover-hard hover:bg-secondary hover:text-secondary-foreground"
           >
             <Icon className="size-4" />
             {label}

@@ -8,23 +8,24 @@ import { Button } from '@/components/ui/button';
 export function ContactCta() {
   const email = siteConfig.links.email.replace('mailto:', '');
   return (
-    <section id="contact" className="py-20 md:py-32">
+    <section id="contact" className="py-16 md:py-24">
       <div className="container">
-        <Reveal>
-          <h2 className="font-display text-4xl font-semibold leading-[0.95] tracking-tight sm:text-6xl md:text-7xl">
-            Let's work together.
+        <Reveal className="relative rounded-[28px] border-[3px] border-foreground bg-accent p-6 text-black shadow-hard-lg sm:p-12">
+          <h2 className="text-5xl leading-[0.9] sm:text-7xl md:text-[8rem]">
+            Let's work<br />together.
           </h2>
-          <p className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
-            I am looking for a junior developer or internship role. If you have an opening, or a project that could use another pair of hands, send me a message.
+          <p className="mt-8 max-w-xl pl-0 text-base font-bold sm:text-lg">
+            I am looking for a software engineering internship role. If you have an opening, or a project that could use another pair of hands, send me a message.
           </p>
           <Link
+            data-shake
             href={siteConfig.links.email}
-            className="mt-8 block w-fit max-w-full break-all font-display text-xl font-medium underline decoration-border decoration-2 underline-offset-8 transition-colors hover:decoration-primary sm:text-3xl md:text-4xl"
+            className="mt-8 block w-fit max-w-full break-all rounded-2xl border-[3px] border-black bg-primary px-4 py-3 font-display text-lg text-black shadow-[6px_6px_0_0_#111] hover-hard hover:bg-white sm:text-3xl md:text-4xl"
           >
             {email}
           </Link>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button asChild size="lg" className="rounded-full">
+            <Button asChild size="lg" variant="outline" className="!border-black !bg-white !text-black !shadow-[3px_3px_0_0_#111]">
               <Link href="/contact">Send a message</Link>
             </Button>
             <CopyEmail email={email} />

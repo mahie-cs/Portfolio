@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import { type DialogProps } from "@radix-ui/react-dialog";
-import { Circle, File, Laptop, Moon, Sun } from "lucide-react";
+import { Circle, File, Laptop, Moon, Search, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
  
 import { mainNav, sidebarNav } from "@/config/docs";
@@ -55,14 +55,15 @@ export function CommandMenu({ ...props }: DialogProps) {
       <Button
         variant="outline"
         className={cn(
-          "relative h-8 w-full justify-start rounded-[0.5rem] bg-muted/50 text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
+          "relative h-9 w-9 p-0 justify-center bg-background text-xs font-bold normal-case shadow-none hover:shadow-none sm:w-28 sm:justify-start sm:px-3 lg:w-40 xl:w-52"
         )}
         onClick={() => setOpen(true)}
         {...props}
       >
+        <Search className="size-4 shrink-0 sm:hidden" />
         <span className="hidden lg:inline-flex">Search sections...</span>
-        <span className="inline-flex lg:hidden">Search...</span>
-        <kbd className="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
+        <span className="hidden sm:inline-flex lg:hidden">Search...</span>
+        <kbd className="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 border-2 border-foreground bg-secondary px-1.5 font-sans text-[10px] font-bold text-secondary-foreground opacity-100 sm:flex">
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>

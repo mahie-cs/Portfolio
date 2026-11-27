@@ -20,18 +20,18 @@ export default function ContactPage() {
         </PageHeaderDescription>
       </PageHeader>
 
-      <div className="mt-10 grid gap-12 lg:grid-cols-[1.3fr_1fr]">
+      <div className="mt-12 grid gap-12 lg:grid-cols-[1.3fr_1fr]">
         <Reveal>
           <ContactForm />
         </Reveal>
         <Reveal className="space-y-6">
           <div>
-            <h2 className="mb-2 font-display text-lg font-semibold">Email</h2>
-            <p className="mb-3 break-all text-muted-foreground">{email}</p>
+            <h2 className="mb-3 inline-block bg-foreground px-3 py-1 text-xl text-background">Email</h2>
+            <p className="mb-4 break-all font-sans text-base font-bold">{email}</p>
             <CopyEmail email={email} />
           </div>
           <div>
-            <h2 className="mb-3 font-display text-lg font-semibold">Elsewhere</h2>
+            <h2 className="mb-4 inline-block bg-foreground px-3 py-1 text-xl text-background">Elsewhere</h2>
             <SocialLinks />
           </div>
         </Reveal>

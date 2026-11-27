@@ -22,7 +22,7 @@ export function SplitText({
             className="inline-block"
             initial={{ y: '110%' }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.9, ease, delay: delay + i * 0.09 }}
+            transition={{ duration: 0.45, ease, delay: delay + i * 0.06 }}
           >
             {word}
             {i < words.length - 1 ? '\u00A0' : ''}

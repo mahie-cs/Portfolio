@@ -14,14 +14,14 @@ export function FeaturedProjects() {
       title="Selected work"
       description="A few things I have designed and built recently."
       action={
-        <Button asChild variant="outline" className="rounded-full">
+        <Button asChild variant="outline" size="lg">
           <Link href="/projects">
             All projects <ArrowRight className="size-4" />
           </Link>
         </Button>
       }
     >
-      <Stagger delay={0.1} className="rounded-xl border">
+      <Stagger delay={0.1} className="border-[3px] border-foreground shadow-hard-lg">
         {featured.map((p) => (
           <StaggerItem key={p.slug}>
             <ProjectRow project={p} />

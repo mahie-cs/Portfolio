@@ -4,7 +4,7 @@ Personal developer portfolio website of MD. Montasir Rahman Mahie. Built with Ne
 
 ## Overview
 
-This repository contains the source code for my portfolio website. It features a modern shell layout, smooth motion animations, live GitHub statistics integration, showcase pages for key software projects, and interactive contact functionality.
+This repository contains the source code for my portfolio website. It features a neo-brutalist design (thick outlines, hard shadows, pastel blocks), an interactive ASCII background, screen shake on button clicks, smooth motion animations, live GitHub statistics integration, showcase pages for key software projects, and interactive contact functionality.
 
 ## Featured Projects
 

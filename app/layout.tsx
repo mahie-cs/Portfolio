@@ -12,6 +12,8 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { LenisProvider } from '@/components/providers/lenis-provider';
 import { MotionProvider } from '@/components/providers/motion-provider';
 import { ScrollProgress } from '@/components/motion/scroll-progress';
+import { AsciiBackground } from '@/components/ascii-background';
+import { ScreenShake } from '@/components/screen-shake';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { Toaster } from '@/components/ui/sonner';
@@ -34,18 +36,20 @@ export const metadata: Metadata = {
   icons: { icon: '/favicon.ico', shortcut: '/favicon-16x16.png', apple: '/apple-touch-icon.png' },
 };
 
-export const viewport: Viewport = { themeColor: META_THEME_COLORS.dark };
+export const viewport: Viewport = { themeColor: META_THEME_COLORS.light };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn('min-h-svh bg-background font-sans antialiased', fontSans.variable, fontMono.variable, fontDisplay.variable)}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange enableColorScheme>
+        <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange enableColorScheme>
           <MotionProvider>
             <LenisProvider>
               <ScrollProgress />
-              <div vaul-drawer-wrapper="" className="relative flex min-h-svh flex-col bg-background">
+              <AsciiBackground />
+              <ScreenShake />
+              <div vaul-drawer-wrapper="" className="relative flex min-h-svh flex-col">
                 <SiteHeader />
                 <main className="flex flex-1 flex-col">{children}</main>
                 <SiteFooter />

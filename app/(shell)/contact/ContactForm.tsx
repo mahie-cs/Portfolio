@@ -15,7 +15,7 @@ function Field({ id, label, error, children }: { id: string; label: string; erro
       <Label htmlFor={id}>{label}</Label>
       {children}
       {error && (
-        <p id={`${id}-error`} role="alert" className="text-sm text-destructive">
+        <p id={`${id}-error`} role="alert" className="inline-block bg-destructive px-2 py-0.5 font-sans text-xs font-bold text-white">
           {error}
         </p>
       )}
@@ -37,19 +37,19 @@ export default function ContactForm() {
 
   const e = state?.fieldErrors;
   return (
-    <form ref={formRef} action={action} className="space-y-5" noValidate>
+    <form ref={formRef} action={action} className="space-y-6 border-[3px] border-foreground bg-card p-5 shadow-hard-lg sm:p-6" noValidate>
       <Field id="fullname" label="Name" error={e?.fullname}>
-        <Input id="fullname" name="fullname" autoComplete="name" required aria-invalid={!!e?.fullname} placeholder="Jane Doe" className="h-11" />
+        <Input id="fullname" name="fullname" autoComplete="name" required aria-invalid={!!e?.fullname} placeholder="Jane Doe" className="h-12" />
       </Field>
       <Field id="email" label="Email" error={e?.email}>
-        <Input id="email" name="email" type="email" autoComplete="email" required aria-invalid={!!e?.email} placeholder="jane@company.com" className="h-11" />
+        <Input id="email" name="email" type="email" autoComplete="email" required aria-invalid={!!e?.email} placeholder="jane@company.com" className="h-12" />
       </Field>
       <Field id="message" label="Message" error={e?.message}>
         <Textarea id="message" name="message" required rows={6} aria-invalid={!!e?.message} placeholder="What are you working on?" />
       </Field>
       {/* Honeypot field: hidden from people, tempting for bots. */}
       <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
-      <Button type="submit" size="lg" disabled={pending} className="w-full rounded-full sm:w-auto">
+      <Button type="submit" size="lg" disabled={pending} className="w-full sm:w-auto">
         {pending ? <Loader2 className="size-4 animate-spin" /> : <Send className="size-4" />}
         {pending ? 'Sending' : 'Send message'}
       </Button>

@@ -6,30 +6,34 @@ import type { TimelineViewerData } from '@/types/TimelineViewer.types';
 
 export function Timeline({ data }: { data: TimelineViewerData[] }) {
   return (
-    <ol className="relative ml-2 border-s border-border">
+    <ol className="relative ml-3 border-s-8 border-foreground">
       {data.map((item, i) => (
         <motion.li
           key={item.title + item.date}
-          className="relative mb-10 ms-6 last:mb-0"
-          initial={{ opacity: 0, x: -10 }}
+          className="relative mb-10 ms-8 last:mb-0"
+          initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '0px 0px -60px 0px' }}
-          transition={{ duration: 0.5, ease, delay: i * 0.05 }}
+          transition={{ duration: 0.25, ease, delay: i * 0.04 }}
         >
           <span
-            className={`absolute -start-[1.9rem] top-1.5 size-2.5 rounded-full ring-4 ring-background ${
-              item.latest ? 'bg-primary' : 'bg-muted-foreground/50'
+            className={`absolute -start-[3.1rem] top-2 size-6 border-[3px] border-foreground ${
+              item.latest ? 'bg-primary' : 'bg-background'
             }`}
           />
-          <time className="text-sm text-muted-foreground">{item.date}</time>
-          <h3 className="mt-1 flex flex-wrap items-center gap-2 text-lg font-semibold">
-            {item.title}
-            {item.latest && (
-              <span className="rounded-full bg-primary/15 px-2 py-0.5 text-xs font-medium text-primary">Current</span>
-            )}
-          </h3>
-          {item.place && <p className="text-sm font-medium text-foreground/80">{item.place}</p>}
-          <p className="mt-2 max-w-2xl leading-relaxed text-muted-foreground">{item.description}</p>
+          <div className="border-[3px] border-foreground bg-card p-5 shadow-hard">
+            <time className="inline-block border-2 border-foreground bg-secondary px-2 py-0.5 font-sans text-xs font-bold text-secondary-foreground">
+              {item.date}
+            </time>
+            <h3 className="mt-3 flex flex-wrap items-center gap-3 text-2xl leading-none">
+              {item.title}
+              {item.latest && (
+                <span className="border-2 border-foreground bg-primary px-2 py-0.5 font-sans text-xs font-bold text-primary-foreground">NOW</span>
+              )}
+            </h3>
+            {item.place && <p className="mt-2 font-sans text-sm font-bold ">{item.place}</p>}
+            <p className="mt-3 max-w-2xl leading-relaxed">{item.description}</p>
+          </div>
         </motion.li>
       ))}
     </ol>

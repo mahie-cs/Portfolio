@@ -1,7 +1,7 @@
 "use client";
 
 import { useIsClient } from "@/hooks/use-is-client";
-import GitHubCalendar, { type Activity } from "react-github-calendar";
+import GitHubCalendar from "react-github-calendar";
 import { siteConfig } from "@/config/site";
 import { useTheme } from "next-themes";
 
@@ -27,53 +27,22 @@ const GitHubGraphs = () => {
     ],
   };
 
-
   if (!mounted) {
     return null; // Return null on server-side and first render on client-side
   }
 
-  // Calculate date 3 months ago for mobile view
-  const getThreeMonthsAgo = () => {
-    const date = new Date();
-    date.setMonth(date.getMonth() - 3);
-    return date;
-  };
-
-  // Transform function to filter last 3 months of data
-  const transformThreeMonths = (data: Activity[]) => {
-    const threeMonthsAgo = getThreeMonthsAgo();
-    return data.filter((activity) => new Date(activity.date) >= threeMonthsAgo);
-  };
-
   return (
-    <>
-      {/* Mobile view (last 3 months) */}
-      <div className="md:hidden w-full">
-        <GitHubCalendar
-          username={siteConfig.links.githubUsername}
-          errorMessage="Could not fetch GitHub stats"
-          hideColorLegend
-          theme={theme}
-          colorScheme={resolvedTheme === "light" ? "light" : "dark"}
-          showWeekdayLabels={true}
-          blockMargin={6}
-          transformData={transformThreeMonths}
-        />
-      </div>
-
-      {/* Desktop view (full calendar) */}
-      <div className="hidden md:block w-full">
-        <GitHubCalendar
-          username={siteConfig.links.githubUsername}
-          errorMessage="Could not fetch GitHub stats"
-          hideColorLegend={false}
-          theme={theme}
-          colorScheme={resolvedTheme === "light" ? "light" : "dark"}
-          showWeekdayLabels={true}
-          blockMargin={6}
-        />
-      </div>
-    </>
+    <div className="w-full flex justify-center min-w-0">
+      <GitHubCalendar
+        username={siteConfig.links.githubUsername}
+        errorMessage="Could not fetch GitHub stats"
+        hideColorLegend={false}
+        theme={theme}
+        colorScheme={resolvedTheme === "light" ? "light" : "dark"}
+        showWeekdayLabels={true}
+        blockMargin={5}
+      />
+    </div>
   );
 };
 

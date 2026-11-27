@@ -16,14 +16,14 @@ export function SkillsMarquee() {
       title="Skills and tools"
       description="The tools I reach for most often."
       action={
-        <Button asChild variant="outline" className="rounded-full">
+        <Button asChild variant="outline" size="lg">
           <Link href="/skills-tools">
             Details <ArrowRight className="size-4" />
           </Link>
         </Button>
       }
     >
-      <div className="-mx-4 flex flex-col gap-3 sm:-mx-6 xl:-mx-8">
+      <div className="-mx-4 flex flex-col gap-4 border-y-[3px] border-foreground bg-muted py-5 sm:-mx-6 xl:-mx-8">
         <Marquee>
           {row(mySkills.slice(0, half))}
         </Marquee>

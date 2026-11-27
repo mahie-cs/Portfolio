@@ -11,7 +11,7 @@ export const siteConfig = {
   // The hero shows these two lines in very large type, so keep them short.
   firstName: 'Montasir',
   lastName: 'Rahman',
-  role: 'Junior software developer',
+  role: 'B.Sc. in CSE Student',
   tagline: 'First-year CSE student building web apps and games.',
   description:
     'Portfolio of MD. Montasir Rahman Mahie, a Computer Science and Engineering student in Dhaka building web apps with TypeScript, React and Next.js, and games with Godot 4 and Ren\'Py.',
@@ -22,13 +22,13 @@ export const siteConfig = {
   timezone: 'Asia/Dhaka',
 
   // Shown as a status pill in the hero. Set to null to hide it.
-  availability: 'Open to internships and junior roles' as string | null,
+  availability: 'Open to software engineering internships' as string | null,
 
   // About section. One string per paragraph.
   bio: [
     'I am a first-year Computer Science and Engineering student in Dhaka who enjoys building things for the web, from the interface down to the database.',
     'My main stack is TypeScript, React, Next.js and Node.js, with MongoDB and Supabase for data. I also make small games in Godot 4 and Ren\'Py, and I am most at home in a terminal with Linux, Bash and Vim.',
-    'I am looking for a junior developer or software engineering internship where I can learn from a team and ship real work.',
+    'I am looking for a software engineering internship where I can learn from a team and ship real work.',
   ],
 
   // Short, scannable facts shown beside the bio.
@@ -41,7 +41,7 @@ export const siteConfig = {
   keywords: [
     'MD. Montasir Rahman Mahie',
     'Montasir Mahie',
-    'junior software developer',
+    'B.Sc. in CSE student',
     'software engineering intern',
     'Next.js',
     'React',
@@ -62,6 +62,6 @@ export const siteConfig = {
 export type SiteConfig = typeof siteConfig;
 
 export const META_THEME_COLORS = {
-  light: '#fafafa',
-  dark: '#0d1117',
+  light: '#e5e5e5',
+  dark: '#17171f',
 };

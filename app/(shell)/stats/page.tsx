@@ -31,21 +31,21 @@ export default async function StatsPage() {
       </PageHeader>
 
       <Reveal className="mt-10">
-        <h2 className="font-display text-2xl font-semibold">Contribution activity</h2>
-        <p className="mt-1 text-muted-foreground">@{siteConfig.links.githubUsername}</p>
+        <h2 className="inline-block bg-foreground px-3 py-1 text-2xl text-background">Contribution activity</h2>
+        <p className="mt-3 font-sans text-sm font-bold">@{siteConfig.links.githubUsername}</p>
       </Reveal>
 
-      <Reveal className="mt-6 flex justify-center overflow-x-auto rounded-xl border p-4">
+      <Reveal className="mt-6 flex justify-center overflow-x-auto border-[3px] border-foreground bg-card p-4 shadow-hard">
         <GitHubGraphs />
       </Reveal>
 
-      <Stagger delay={0.05} className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <Stagger delay={0.05} className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
         {githubCards.map((c) => (
           <StaggerItem key={c.title}>
-            <SpotlightCard className="h-full min-h-[115px] p-5">
-              <div className="flex h-full flex-col justify-between gap-3">
-                <p className="text-sm font-medium text-muted-foreground">{c.title}</p>
-                <div className="font-display text-2xl font-semibold leading-tight tracking-tight break-words line-clamp-2">
+            <SpotlightCard className="h-full min-h-[100px] p-3.5 sm:p-5">
+              <div className="flex h-full flex-col justify-between gap-2 sm:gap-3">
+                <p className="font-sans text-xs font-medium text-muted-foreground">{c.title}</p>
+                <div className="font-sans text-base font-normal text-foreground leading-snug break-words sm:text-xl md:text-2xl">
                   {typeof c.value === 'number' ? (
                     <AnimatedNumber value={c.value} />
                   ) : (

@@ -15,7 +15,7 @@ export function ModeSwitcher({ className }: { className?: string }) {
     <Button
       variant="ghost"
       size="icon"
-      className="size-9 rounded-full"
+      
       onClick={() => {
         const next = resolvedTheme === 'dark' ? 'light' : 'dark';
         setTheme(next);
