@@ -39,13 +39,13 @@ export default async function StatsPage() {
         <GitHubGraphs />
       </Reveal>
 
-      <Stagger delay={0.05} className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <Stagger delay={0.05} className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
         {githubCards.map((c) => (
           <StaggerItem key={c.title}>
-            <SpotlightCard className="h-full min-h-[115px] p-5">
-              <div className="flex h-full flex-col justify-between gap-3">
-                <p className="font-sans text-xs font-bold ">{c.title}</p>
-                <div className="font-display text-3xl leading-tight break-words line-clamp-2">
+            <SpotlightCard className="h-full min-h-[100px] p-3.5 sm:p-5">
+              <div className="flex h-full flex-col justify-between gap-2 sm:gap-3">
+                <p className="font-sans text-xs font-medium text-muted-foreground">{c.title}</p>
+                <div className="font-sans text-base font-normal text-foreground leading-snug break-words sm:text-xl md:text-2xl">
                   {typeof c.value === 'number' ? (
                     <AnimatedNumber value={c.value} />
                   ) : (

@@ -9,10 +9,12 @@ export function AboutPreview() {
     <Section id="about" title="About">
       <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr]">
         <Reveal>
-          <p className="font-display text-2xl leading-[1.1] sm:text-4xl">
-            {siteConfig.bio[0]}
+          <p className="font-sans text-xl font-normal leading-relaxed text-foreground sm:text-2xl sm:leading-relaxed">
+            I am a <span className="font-semibold text-foreground">first-year Computer Science &amp; Engineering student</span> in Dhaka who enjoys building things for the web, from the interface down to the database.
           </p>
-          <p className="mt-6 max-w-2xl text-lg font-medium">{siteConfig.bio[1]}</p>
+          <p className="mt-5 max-w-2xl font-sans text-base font-normal leading-relaxed text-muted-foreground sm:text-lg">
+            My main stack is <span className="font-semibold text-foreground">TypeScript</span>, <span className="font-semibold text-foreground">React</span>, <span className="font-semibold text-foreground">Next.js</span>, and <span className="font-semibold text-foreground">Node.js</span>, with <span className="font-semibold text-foreground">MongoDB</span> and <span className="font-semibold text-foreground">Supabase</span> for data. I also make small games in <span className="font-semibold text-foreground">Godot 4</span> and <span className="font-semibold text-foreground">Ren'Py</span>, and I am most at home in a terminal with Linux, Bash, and Vim.
+          </p>
           <Link
             href="/about"
             className="group mt-8 inline-flex items-center gap-2 border-2 border-foreground bg-primary px-4 py-2 font-sans text-sm font-bold text-primary-foreground shadow-hard-sm hover-hard"

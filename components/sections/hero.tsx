@@ -10,7 +10,7 @@ import { SplitText } from '@/components/motion/split-text';
 import { LocalClock } from '@/components/local-clock';
 import { Marquee } from '@/components/motion/marquee';
 
-const ticker = ['Open to work', 'Junior dev', 'Web apps', 'Games', 'TypeScript', 'Next.js', 'Dhaka, BD'];
+const ticker = ['Open to work', 'CSE Student', 'Web apps', 'Games', 'TypeScript', 'Next.js', 'Dhaka, BD'];
 
 export function Hero() {
   const pop = (delay: number) => ({

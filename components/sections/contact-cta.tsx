@@ -15,7 +15,7 @@ export function ContactCta() {
             Let's work<br />together.
           </h2>
           <p className="mt-8 max-w-xl pl-0 text-base font-bold sm:text-lg">
-            I am looking for a junior developer or internship role. If you have an opening, or a project that could use another pair of hands, send me a message.
+            I am looking for a software engineering internship role. If you have an opening, or a project that could use another pair of hands, send me a message.
           </p>
           <Link
             data-shake

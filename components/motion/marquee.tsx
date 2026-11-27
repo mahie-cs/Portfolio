@@ -11,7 +11,7 @@ export function Marquee({
   className?: string;
 }) {
   return (
-    <div className={cn('group flex overflow-hidden', className)}>
+    <div className={cn('group flex overflow-hidden py-2.5', className)}>
       {[0, 1].map((i) => (
         <div
           key={i}

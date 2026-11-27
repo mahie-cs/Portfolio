@@ -14,14 +14,22 @@ export default function AboutPage() {
         <PageHeaderHeading>About me</PageHeaderHeading>
       </PageHeader>
 
-      <Stagger className="mt-8 max-w-2xl space-y-6 text-lg leading-relaxed">
-        {siteConfig.bio.map((p, i) => (
-          <StaggerItem key={i}>
-            <p className={i === 0 ? 'font-display text-2xl leading-[1.1] sm:text-4xl' : 'font-medium'}>
-              {p}
-            </p>
-          </StaggerItem>
-        ))}
+      <Stagger className="mt-8 max-w-2xl space-y-6">
+        <StaggerItem>
+          <p className="font-sans text-xl font-normal leading-relaxed text-foreground sm:text-2xl sm:leading-relaxed">
+            I am a <span className="font-semibold text-foreground">first-year Computer Science &amp; Engineering student</span> in Dhaka who enjoys building things for the web, from the interface down to the database.
+          </p>
+        </StaggerItem>
+        <StaggerItem>
+          <p className="font-sans text-base font-normal leading-relaxed text-muted-foreground sm:text-lg">
+            My main stack is <span className="font-semibold text-foreground">TypeScript</span>, <span className="font-semibold text-foreground">React</span>, <span className="font-semibold text-foreground">Next.js</span>, and <span className="font-semibold text-foreground">Node.js</span>, with <span className="font-semibold text-foreground">MongoDB</span> and <span className="font-semibold text-foreground">Supabase</span> for data. I also make small games in <span className="font-semibold text-foreground">Godot 4</span> and <span className="font-semibold text-foreground">Ren'Py</span>, and I am most at home in a terminal with Linux, Bash, and Vim.
+          </p>
+        </StaggerItem>
+        <StaggerItem>
+          <p className="font-sans text-base font-normal leading-relaxed text-muted-foreground sm:text-lg">
+            {siteConfig.bio[2]}
+          </p>
+        </StaggerItem>
       </Stagger>
 
       <Stagger className="mt-12 grid max-w-2xl border-[3px] border-foreground bg-foreground shadow-hard-lg sm:grid-cols-3">
