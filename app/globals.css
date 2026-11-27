@@ -1,0 +1,228 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ───────────── Design tokens ─────────────
+   Change colours here and the whole site follows.
+   --primary is the single accent colour. */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-blue: var(--blue);
+  --color-lilac: var(--lilac);
+  --color-orange: var(--orange);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@theme {
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-reverse: marquee 38s linear infinite reverse;
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+:root {
+  --radius: 1rem;
+  --background: #fff6e3;
+  --foreground: #111111;
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --primary: #ffd93d;
+  --primary-foreground: #111111;
+  --secondary: #6fe3c1;
+  --secondary-foreground: #111111;
+  --muted: #f0e6cc;
+  --muted-foreground: #3d3d3d;
+  --accent: #ff8fab;
+  --accent-foreground: #111111;
+  --blue: #7aa8ff;
+  --lilac: #c9a6ff;
+  --orange: #ff9f5a;
+  --destructive: #e00000;
+  --border: #111111;
+  --input: #111111;
+  --ring: #7aa8ff;
+  --shadow-color: #111111;
+}
+
+.dark {
+  --background: #17171f;
+  --foreground: #f6f1e3;
+  --card: #24242f;
+  --card-foreground: #f6f1e3;
+  --popover: #24242f;
+  --popover-foreground: #f6f1e3;
+  --primary: #ffd93d;
+  --primary-foreground: #111111;
+  --secondary: #6fe3c1;
+  --secondary-foreground: #111111;
+  --muted: #2e2e3b;
+  --muted-foreground: #c5c0b0;
+  --accent: #ff8fab;
+  --accent-foreground: #111111;
+  --blue: #7aa8ff;
+  --lilac: #c9a6ff;
+  --orange: #ff9f5a;
+  --destructive: #ff5a5a;
+  --border: #f6f1e3;
+  --input: #f6f1e3;
+  --ring: #7aa8ff;
+  --shadow-color: #f6f1e3;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (min-width: 1280px) {
+    html { font-size: 105%; }
+  }
+  @media (min-width: 1920px) {
+    html { font-size: 112%; }
+  }
+  body {
+    @apply bg-background text-foreground overscroll-none;
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--primary);
+    color: #111111;
+  }
+  :focus-visible {
+    @apply outline-4 outline-offset-2 outline-ring;
+  }
+  h1, h2, h3, h4 {
+    @apply scroll-m-20 tracking-tight;
+    font-family: var(--font-display), var(--font-geist-sans), sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .border-grid { @apply border-solid border-border; border-width: 0; }
+
+  .container-wrapper {
+    @apply max-w-[1600px] mx-auto w-full;
+  }
+  .container {
+    @apply px-4 mx-auto sm:px-6 xl:px-8 max-w-screen-2xl;
+  }
+
+  .font-display { font-weight: 800; letter-spacing: -0.03em; }
+
+  /* Hard-edged offset shadow. The neo-brutalist signature. */
+  .shadow-hard { box-shadow: 6px 6px 0 0 var(--shadow-color); }
+  .shadow-hard-sm { box-shadow: 3px 3px 0 0 var(--shadow-color); }
+  .shadow-hard-lg { box-shadow: 10px 10px 0 0 var(--shadow-color); }
+  .shadow-hard, .shadow-hard-lg { border-radius: 1.125rem; }
+  .shadow-hard-lg { overflow: hidden; }
+  .hover-hard {
+    transition: transform 100ms ease-out, box-shadow 100ms ease-out;
+  }
+  .hover-hard:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 0 var(--shadow-color);
+  }
+  .hover-hard:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 0 var(--shadow-color);
+  }
+
+  /* Graph-paper grid behind the hero. */
+  .bg-grid-paper {
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.09;
+  }
+
+  /* Diagonal hazard stripes. */
+  .bg-hazard {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--primary) 0 14px,
+      #0a0a0a 14px 28px
+    );
+  }
+
+  /* Outlined display text. */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 3px var(--foreground);
+  }
+
+  /* Blinking block cursor. */
+  .cursor-block::after {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.9em;
+    margin-left: 0.15em;
+    background: var(--primary);
+    vertical-align: -0.05em;
+    animation: blink 1s steps(2, start) infinite;
+  }
+  @keyframes blink { to { visibility: hidden; } }
+}
+
+/* Screen shake, fired from <ScreenShake /> on button clicks. */
+@keyframes shake {
+  0%, 100% { transform: none; }
+  12% { transform: translate(var(--sx), var(--sy)); }
+  28% { transform: translate(calc(var(--sx) * -0.85), calc(var(--sy) * -0.6)); }
+  44% { transform: translate(calc(var(--sx) * 0.65), calc(var(--sy) * 0.85)); }
+  60% { transform: translate(calc(var(--sx) * -0.4), calc(var(--sy) * -0.35)); }
+  80% { transform: translate(calc(var(--sx) * 0.18), calc(var(--sy) * 0.18)); }
+}
+body.shake [vaul-drawer-wrapper],
+body.shake #ascii-bg {
+  animation: shake 0.38s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.shake [vaul-drawer-wrapper],
+  body.shake #ascii-bg { animation: none; }
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .cursor-block::after {
+    animation-play-state: paused;
+  }
+}
